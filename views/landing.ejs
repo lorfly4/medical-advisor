@@ -1,0 +1,670 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Tunas Engineering Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      /* Slide up animation */
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .slide-up {
+        animation: slideUp 0.3s ease forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <a class="flex items-center space-x-2" href="#">
+          <img
+            alt="Tunas Engineering red and blue logo with stylized TE letters"
+            class="w-12 h-12 object-contain"
+            height="48"
+            src="https://storage.googleapis.com/a1aa/image/33344a3d-32d0-46c6-c1f0-b3ad899a9bf0.jpg"
+            width="48"
+          />
+          <span class="text-2xl font-bold text-red-600">
+            Tunas Engineering
+          </span>
+        </a>
+        <nav class="hidden md:flex space-x-8 font-semibold text-blue-700">
+          <a class="hover:text-red-600 transition" href="#"> Home </a>
+          <a class="hover:text-red-600 transition" href="#about"> About Us </a>
+          <a class="hover:text-red-600 transition" href="#services">
+            Services
+          </a>
+          <a class="hover:text-red-600 transition" href="#projects">
+            Projects
+          </a>
+          <a class="hover:text-red-600 transition" href="#news"> News </a>
+          <a class="hover:text-red-600 transition" href="#contact"> Contact </a>
+        </nav>
+        <button
+          aria-label="Toggle menu"
+          class="md:hidden text-blue-700 focus:outline-none"
+          id="menu-btn"
+        >
+          <i class="fas fa-bars fa-lg"> </i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <nav
+        aria-label="Mobile menu"
+        class="hidden md:hidden bg-white border-t border-gray-200"
+        id="mobile-menu"
+      >
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#"
+        >
+          Home
+        </a>
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#about"
+        >
+          About Us
+        </a>
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#services"
+        >
+          Services
+        </a>
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#projects"
+        >
+          Projects
+        </a>
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#news"
+        >
+          News
+        </a>
+        <a
+          class="block px-6 py-3 font-semibold text-blue-700 hover:bg-red-50 hover:text-red-600"
+          href="#contact"
+        >
+          Contact
+        </a>
+      </nav>
+    </header>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("slide-up");
+        } else {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("slide-up");
+        }
+      });
+    </script>
+    <!-- Hero Section -->
+    <section
+      aria-label="Hero section with engineering machinery and company tagline"
+      class="pt-24 bg-red-600 text-white"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20 py-20"
+      >
+        <div class="md:w-1/2 space-y-6">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Engineering Solutions for a Better Future
+          </h1>
+          <p class="text-lg md:text-xl max-w-xl">
+            Tunas Engineering is your trusted partner in industrial engineering,
+            providing innovative and reliable solutions tailored to your needs.
+          </p>
+          <a
+            class="inline-block bg-blue-700 hover:bg-blue-800 transition text-white font-semibold px-8 py-3 rounded shadow"
+            href="#contact"
+          >
+            Contact Us
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img
+            alt="Industrial engineering machinery with workers wearing safety helmets and blue uniforms operating equipment in a factory setting"
+            class="rounded-lg shadow-lg w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/61943be2-4faa-451a-2f7a-14f1375e0470.jpg"
+            width="600"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section
+      aria-label="About Tunas Engineering company overview"
+      class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12"
+      id="about"
+    >
+      <div class="md:w-1/2">
+        <img
+          alt="Tunas Engineering team in a meeting room discussing project plans with blueprints and laptops"
+          class="rounded-lg shadow-lg w-full object-cover"
+          height="400"
+          src="https://storage.googleapis.com/a1aa/image/3d47cfa7-30b2-46e4-e36f-30184a742f4c.jpg"
+          width="600"
+        />
+      </div>
+      <div class="md:w-1/2 space-y-6">
+        <h2 class="text-3xl font-bold text-red-600">About Tunas Engineering</h2>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Established in 1995, Tunas Engineering has grown to become a leader in
+          industrial engineering services in Indonesia. Our commitment to
+          quality, safety, and innovation drives us to deliver the best
+          solutions for our clients.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Our team of experienced engineers and technicians work closely with
+          clients to understand their unique challenges and provide customized
+          solutions that improve efficiency and productivity.
+        </p>
+        <a
+          class="inline-block text-blue-700 font-semibold hover:text-red-600 transition"
+          href="#services"
+        >
+          Learn More About Our Services →
+        </a>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section
+      aria-label="Services offered by Tunas Engineering"
+      class="bg-blue-50 py-20"
+      id="services"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center">
+          Our Services
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto"
+        >
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing engineering design with red gear and blueprint"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/f43a58e3-cb38-45ac-6836-035e94227b87.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-red-600 mb-2">
+              Engineering Design
+            </h3>
+            <p class="text-gray-700">
+              Comprehensive design services for industrial plants, machinery,
+              and infrastructure.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing consulting services with blue speech bubbles and gear"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/fad3fca1-9279-41aa-8f31-14b58baede1e.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Consulting</h3>
+            <p class="text-gray-700">
+              Expert advice and project management to optimize your engineering
+              projects.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing fabrication with red welding torch and metal parts"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/a6c8914b-3197-488d-5fa0-2b33058a6a13.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-red-600 mb-2">Fabrication</h3>
+            <p class="text-gray-700">
+              High-quality fabrication of industrial components and machinery
+              parts.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing installation with blue crane lifting machinery"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/414738b7-1c8e-4953-284f-24ca752387b3.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">
+              Installation
+            </h3>
+            <p class="text-gray-700">
+              Professional installation services ensuring safety and efficiency.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing maintenance with red wrench and gear"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/b20ce24d-f1c7-45a6-e91e-bde779c40c37.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-red-600 mb-2">Maintenance</h3>
+            <p class="text-gray-700">
+              Scheduled and emergency maintenance to keep your equipment running
+              smoothly.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+          >
+            <img
+              alt="Icon representing training with blue graduation cap and gear"
+              class="mb-4 w-20 h-20 object-contain"
+              height="120"
+              src="https://storage.googleapis.com/a1aa/image/0a4e8891-97c8-4f61-082a-d463f148d3ef.jpg"
+              width="120"
+            />
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Training</h3>
+            <p class="text-gray-700">
+              Professional training programs for your staff on equipment and
+              safety.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section
+      aria-label="Recent projects completed by Tunas Engineering"
+      class="max-w-7xl mx-auto px-6 py-20"
+      id="projects"
+    >
+      <h2 class="text-3xl font-bold text-red-600 mb-12 text-center">
+        Our Projects
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto"
+      >
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Large industrial plant with red and blue piping and machinery under bright sky"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/9b15beb7-a768-4177-5915-531d3087f50e.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">
+              Industrial Plant Installation
+            </h3>
+            <p class="text-gray-700">
+              Complete installation of a chemical processing plant with advanced
+              safety systems.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Close-up of red fabricated machinery parts with blue accents in workshop"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/e1871f8a-1a9f-46eb-ba33-135435434e81.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-red-600 mb-2">
+              Custom Machinery Fabrication
+            </h3>
+            <p class="text-gray-700">
+              Fabrication of custom machinery parts tailored to client
+              specifications.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Maintenance team in blue uniforms performing equipment checks in factory"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/924e873f-80f4-4b1a-9500-d134fc3716c9.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">
+              Equipment Maintenance &amp; Repair
+            </h3>
+            <p class="text-gray-700">
+              Scheduled maintenance and emergency repairs to minimize downtime.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Engineers in red and blue safety helmets discussing project plans on site"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/fa649d4f-10c0-41c5-0b27-9df23b797a06.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-red-600 mb-2">
+              Engineering Consulting
+            </h3>
+            <p class="text-gray-700">
+              Expert consulting services to optimize project outcomes and costs.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Training session with engineers in blue uniforms learning equipment operation"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/d63f00ed-581f-48bf-54fa-54b230174b70.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">
+              Staff Training
+            </h3>
+            <p class="text-gray-700">
+              Comprehensive training programs to enhance staff skills and
+              safety.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+        >
+          <img
+            alt="Installation of heavy machinery with red cranes and blue safety barriers"
+            class="w-full object-cover"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/a0a9f192-170c-4fb7-ab33-31906bedcaf6.jpg"
+            width="600"
+          />
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold text-red-600 mb-2">
+              Machinery Installation
+            </h3>
+            <p class="text-gray-700">
+              Safe and efficient installation of heavy industrial machinery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- News Section -->
+    <section
+      aria-label="Latest news and updates from Tunas Engineering"
+      class="bg-blue-50 py-20"
+      id="news"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center">
+          Latest News
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <article
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <img
+              alt="Announcement banner with red and blue colors for new project launch"
+              class="w-full object-cover"
+              height="350"
+              src="https://storage.googleapis.com/a1aa/image/7c007440-b521-461e-7b77-583ce4de282a.jpg"
+              width="600"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-red-600 mb-2">
+                New Project Launch in Jakarta
+              </h3>
+              <time
+                class="block mb-4 text-sm text-gray-500"
+                datetime="2024-05-10"
+              >
+                May 10, 2024
+              </time>
+              <p class="text-gray-700">
+                Tunas Engineering is proud to announce the launch of a new
+                industrial plant project in Jakarta, focusing on sustainable
+                energy solutions.
+              </p>
+            </div>
+          </article>
+          <article
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <img
+              alt="Group photo of employees in blue uniforms after safety training session"
+              class="w-full object-cover"
+              height="350"
+              src="https://storage.googleapis.com/a1aa/image/8a6205bb-b4b8-447a-3a26-1aae14b2a6d0.jpg"
+              width="600"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-blue-900 mb-2">
+                Successful Completion of Safety Training
+              </h3>
+              <time
+                class="block mb-4 text-sm text-gray-500"
+                datetime="2024-04-22"
+              >
+                April 22, 2024
+              </time>
+              <p class="text-gray-700">
+                Our team recently completed an intensive safety training program
+                to ensure the highest standards on all project sites.
+              </p>
+            </div>
+          </article>
+          <article
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <img
+              alt="Red fabricated machinery parts ready for shipment in factory warehouse"
+              class="w-full object-cover"
+              height="350"
+              src="https://storage.googleapis.com/a1aa/image/edc72891-4b55-4720-b673-6ce53d44bb03.jpg"
+              width="600"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-red-600 mb-2">
+                New Machinery Fabrication Completed
+              </h3>
+              <time
+                class="block mb-4 text-sm text-gray-500"
+                datetime="2024-03-15"
+              >
+                March 15, 2024
+              </time>
+              <p class="text-gray-700">
+                We have completed fabrication of new custom machinery parts for
+                a major client in the manufacturing sector.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section
+      aria-label="Contact Tunas Engineering"
+      class="max-w-7xl mx-auto px-6 py-20"
+      id="contact"
+    >
+      <h2 class="text-3xl font-bold text-red-600 mb-12 text-center">
+        Contact Us
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <form
+          action="#"
+          aria-label="Contact form"
+          class="bg-white rounded-lg shadow-md p-8 space-y-6"
+          method="POST"
+        >
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2" for="name">
+              Full Name
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              required=""
+              type="text"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2" for="email">
+              Email Address
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required=""
+              type="email"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2" for="message">
+              Message
+            </label>
+            <textarea
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+              id="message"
+              name="message"
+              placeholder="Write your message here"
+              required=""
+              rows="5"
+            ></textarea>
+          </div>
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded shadow transition"
+            type="submit"
+          >
+            Send Message
+          </button>
+        </form>
+        <div class="space-y-8 text-gray-700">
+          <div>
+            <h3 class="text-xl font-semibold text-red-600 mb-3">Head Office</h3>
+            <p>Jl. Jend. Sudirman No. 123, Jakarta, Indonesia</p>
+            <p>Phone: +62 21 555 1234</p>
+            <p>Email: info@tunas-engineering.co.id</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-red-600 mb-3">
+              Working Hours
+            </h3>
+            <p>Monday - Friday: 08:00 - 17:00</p>
+            <p>Saturday: 08:00 - 12:00</p>
+            <p>Sunday: Closed</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-red-600 mb-3">Follow Us</h3>
+            <div class="flex space-x-6 text-blue-900 text-2xl">
+              <a
+                aria-label="Facebook"
+                class="hover:text-red-600 transition"
+                href="#"
+              >
+                <i class="fab fa-facebook-square"> </i>
+              </a>
+              <a
+                aria-label="Twitter"
+                class="hover:text-red-600 transition"
+                href="#"
+              >
+                <i class="fab fa-twitter-square"> </i>
+              </a>
+              <a
+                aria-label="LinkedIn"
+                class="hover:text-red-600 transition"
+                href="#"
+              >
+                <i class="fab fa-linkedin"> </i>
+              </a>
+              <a
+                aria-label="Instagram"
+                class="hover:text-red-600 transition"
+                href="#"
+              >
+                <i class="fab fa-instagram-square"> </i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white py-8 mt-20">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+      >
+        <p class="text-sm">© 2024 Tunas Engineering. All rights reserved.</p>
+        <nav class="space-x-6 mt-4 md:mt-0 font-semibold">
+          <a class="hover:text-blue-300 transition" href="#">
+            Privacy Policy
+          </a>
+          <a class="hover:text-blue-300 transition" href="#">
+            Terms of Service
+          </a>
+          <a class="hover:text-blue-300 transition" href="#"> Sitemap </a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
